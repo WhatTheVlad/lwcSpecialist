@@ -5,15 +5,19 @@
 <!-- Boat Search Form -->
 <template>
 
-  <lightning-card title="Card Title" class="slds-align-middle">
-    <div class="slds-m-top_small slds-m-bottom_medium">
-      <p class="slds-m-left_x-small">Find a Boat</p>
-      <lightning-button label="New Boat"
-                        variant="base"
-                        title="New Boat"
-                        class="slds-m-left_x-small"
-                        onclick={handleClick}>
-      </lightning-button>
+  <lightning-card title="Card Title">
+    <div class="slds-grid">
+      <div class="slds-col slds-size_1-of-2">
+        <p class="slds-m-left_x-small slds-float_left">Find a Boat</p>
+      </div>
+      <div class="slds-col slds-size_1-of-2">
+        <lightning-button label="New Boaty"
+                          variant=""
+                          title="New Boat"
+                          class="slds-m-left_x-small slds-float_right"
+                          onclick={handleClick}>
+        </lightning-button>
+      </div>
     </div>
   </lightning-card>
 
