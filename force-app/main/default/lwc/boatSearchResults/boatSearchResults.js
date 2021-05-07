@@ -4,7 +4,7 @@
 
 import { LightningElement, api, track, wire} from "lwc";
 import getBoats from "@salesforce/apex/BoatDataService.getBoats";
-import { getRecord } from "lightning/uiRecordApi";
+//import { getRecord } from "lightning/uiRecordApi";
 
 export default class BoatSearchResults extends LightningElement {
   @track searchResults;
@@ -27,15 +27,13 @@ export default class BoatSearchResults extends LightningElement {
     console.log('this.boatTypeId = ' + this.boatTypeId);
     if (data) {
       console.log('data = ' + data);
+      this.searchResults = data;
+      console.log('this.searchResults = ' + this.searchResults);
       this.dispatchEvent(new CustomEvent('doneloading'));
     } else if (error) {
       console.log('error');
       this.error = error;
     }
-  }
-
-  boatSearchResults(event) {
-    console.log('boatSearchResults');
   }
 
 }

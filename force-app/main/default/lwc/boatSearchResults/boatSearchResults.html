@@ -5,6 +5,12 @@
 <!-- Boat Search Results -->
 <template>
 
-  <lightning-card title="Search Results"></lightning-card>
+  <lightning-card title="Search Results">
+    <template for:each={searchResults} for:item="boat">
+      <p key={boat.Id} style="display:inline">
+        <c-boat-tile boat={boat}></c-boat-tile>
+      </p>
+    </template>
+  </lightning-card>
 
 </template>
