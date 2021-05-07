@@ -4,15 +4,20 @@
     <lightning-layout-item size="12">
       <lightning-card title="Find a Boat">
         <lightning-button label="New Boat" class="slds-grid_align-end"></lightning-button>
-        <p class="slds-var-p-horizontal_small slds-align-middle">
-          <c-boat-search-form></c-boat-search-form>
-        </p>
+        <div class="slds-align_absolute-center">
+          <p class="slds-var-p-horizontal_small slds-align-middle">
+            <c-boat-search-form onsearch={searchBoats}></c-boat-search-form>
+          </p>
+        </div>
       </lightning-card>
+
     </lightning-layout-item>
     <!-- Bottom -->
     <lightning-layout-item size="12" class="slds-p-top_small slds-is-relative">
-<!--      <lightning-spinner alternative-text="Loading" class="slds-brand-band slds-brand-band_small"></lightning-spinner>-->
-      <!-- boatSearchResults goes here -->
+      <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" class="slds-brand-band slds-brand-band_small"></lightning-spinner>
+      </template>
+      <c-boat-search-results ondoneloading={handleDoneLoading}></c-boat-search-results>
       <!-- onloading={handleLoading} ondoneloading={handleDoneLoading} -->
     </lightning-layout-item>
   </lightning-layout>
